@@ -1,5 +1,6 @@
 import React from 'react'
 import Product from './Product';
+import Image from 'next/image';
 
 function ProductFeed({ products }) {
 
@@ -20,7 +21,7 @@ function ProductFeed({ products }) {
           />
         )};
 
-      <img
+      <Image
         className="md:col-span-full"
         src="https://links.papareact.com/dyz"
         alt="image" />

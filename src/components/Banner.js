@@ -7,7 +7,7 @@ import Image from 'next/image';
 function Banner() {
   return (
     <div className="relative">
-      <div className="absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20"/>
+      <div className="absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20" />
       <Carousel
         autoplay={true}
         infiniteLoop={true}
@@ -17,15 +17,24 @@ function Banner() {
         interval={1000}>
 
         <div>
-          <Image loading="lazy" src="https://links.papareact.com/gi1" alt="carousel-image-1" />
+          <img
+            loading="lazy"
+            src="https://links.papareact.com/gi1"
+            alt="carousel-image-1" />
         </div>
 
         <div>
-          <Image loading="lazy" src="https://links.papareact.com/6ff" alt="carousel-image-2" />
+          <img
+            loading="lazy"
+            src="https://links.papareact.com/6ff"
+            alt="carousel-image-2" />
         </div>
 
         <div>
-          <Image loading="lazy" src="https://links.papareact.com/7ma" alt="carousel-image-3" />
+          <img
+            loading="lazy"
+            src="https://links.papareact.com/7ma"
+            alt="carousel-image-3" />
         </div>
 
       </Carousel>

@@ -16,7 +16,8 @@ function Header() {
             width={150}
             height={40}
             objectFit="contain"
-            className="cursor-pointer" />
+            className="cursor-pointer" 
+            alt="image"/>
         </div>
 
         {/* Search */}

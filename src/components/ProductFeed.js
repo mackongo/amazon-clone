@@ -29,9 +29,9 @@ function ProductFeed({ products }) {
       <div className="md:col-span-2">
         {products
           .slice(4, 5)
-          .map(({ key, id, title, price, description, category, image }, index) =>
+          .map(({id, title, price, description, category, image }) =>
             <Product
-              key={index}
+              key={id}
               id={id}
               title={title}
               price={price}

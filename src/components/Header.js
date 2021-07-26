@@ -1,10 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import {
-  MenuIcon,
-  SearchIcon,
-  ShoppingCartIcon
-} from "@heroicons/react/outline";
+import { MenuIcon, SearchIcon, ShoppingCartIcon } from "@heroicons/react/outline";
+
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 function Header() {
   return (
@@ -16,8 +14,8 @@ function Header() {
             width={150}
             height={40}
             objectFit="contain"
-            className="cursor-pointer" 
-            alt="image"/>
+            className="cursor-pointer"
+            alt="image" />
         </div>
 
         {/* Search */}
@@ -28,8 +26,7 @@ function Header() {
 
         {/* right section */}
         <div className="text-white flex items-center text-white text-xs space-x-6 mx-6 whitespace-nowrap">
-
-          <div className="link">
+          <div onClick={signIn} className="cursor-pointer link">
             <p>Hello Ally Makongo</p>
             <p className="font-extrabold md:text-sm">Account & List</p>
           </div>

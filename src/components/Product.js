@@ -3,11 +3,26 @@ import Image from 'next/image';
 import { StarIcon } from '@heroicons/react/solid';
 import { random } from 'nanoid';
 import CurrencyFormatter from 'currency-formatter-react';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice';
 
-function Product({key, id, title, price, description, category, image }) {
+function Product({id, title, price, description, category, image }) {
+
+  const dispatch = useDispatch();
 
   const [rating] = useState(Math.floor(Math.random() * 5) + 1);
   const [hasPrime] = useState(Math.random() < 0.5);
+
+  const addItemToBasket = () => {
+
+    const product = {
+      id, title, price, rating, description, category, image, hasPrime
+    }
+
+    //sending the product as action to redux store
+    dispatch(addToBasket(product));
+
+  }
 
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10">
@@ -35,7 +50,7 @@ function Product({key, id, title, price, description, category, image }) {
           <p className="text-xs text-gray-500">FREE Next delivery</p>
         </div>)
       }
-      <button className="button mt-auto text-xs bg-gradient-to-b from-yellow-200 to-yellow-400 border-yellow-300 rounded-sm text-black foucs:outline-none focus:ring-2">Add to Basket</button>
+      <button onClick={addItemToBasket} className="button mt-auto text-xs bg-gradient-to-b from-yellow-200 to-yellow-400 border-yellow-300 rounded-sm text-black foucs:outline-none focus:ring-2">Add to Basket</button>
 
     </div>
   )
